@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.apitesting.R
 import com.example.apitesting.adapter.MovieRecyclerAdapter
 import com.example.apitesting.application.MyApplication
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var movieAdapter: MovieRecyclerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //view banding
+        //view binding
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         movieAdapter = MovieRecyclerAdapter(this)
