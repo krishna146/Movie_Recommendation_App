@@ -3,8 +3,10 @@ package com.example.apitesting.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,8 +59,23 @@ class MainActivity : AppCompatActivity() {
 
         })
         activityMainBinding.btnRecommend.setOnClickListener {
-            activityMainBinding.progressBar.visibility = View.VISIBLE
+            //hide keyboard
+            val view: View? = this.currentFocus
+            // on below line we are creating a variable for input manager and initializing it.
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            // on below line hiding our keyboard.
+            inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
+
+            //progress bar
+            //activityMainBinding.progressBar.visibility = View.VISIBLE
             activityMainBinding.recyclerMovie.visibility = View.GONE
+
+            activityMainBinding.avatarView.apply {
+                isVisible = true
+                isAnimating = true
+            }
+
+            // recommending movie
             val movieName = activityMainBinding.atMovieName.text.toString()
             GlobalScope.launch {
                 Log.d("KRISHNA", movieName)
@@ -90,13 +107,20 @@ class MainActivity : AppCompatActivity() {
                 movieList.add(movie)
                 idx++
             }
-            for(movie in movieList){
+            for (movie in movieList) {
                 Log.d("KRISHNA", movie.toString())
             }
-            activityMainBinding.progressBar.visibility = View.GONE
+            //activityMainBinding.progressBar.visibility = View.GONE
+            activityMainBinding.avatarView.visibility = View.GONE
             activityMainBinding.recyclerMovie.visibility = View.VISIBLE
             movieAdapter.submitList(movieList)
         })
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        //Toast.makeText(this, "Pause", Toast.LENGTH_LONG).show()
+        onCreate(savedInstanceState = null)
     }
 }
