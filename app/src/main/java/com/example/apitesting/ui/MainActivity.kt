@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var movieAdapter: MovieRecyclerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //view banding
+        //view binding
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
