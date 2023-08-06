@@ -30,7 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     //enabling data binding feature Note: Add at the bottom
     buildFeatures {
@@ -62,7 +62,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.13.0'
 
     //loader
-    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+//    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
 
 
 }
