@@ -2,6 +2,7 @@ package com.example.apitesting.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -56,6 +57,8 @@ class MainActivity : AppCompatActivity() {
 
         })
         activityMainBinding.btnRecommend.setOnClickListener {
+            activityMainBinding.progressBar.visibility = View.VISIBLE
+            activityMainBinding.recyclerMovie.visibility = View.GONE
             val movieName = activityMainBinding.atMovieName.text.toString()
             GlobalScope.launch {
                 Log.d("KRISHNA", movieName)
@@ -90,6 +93,8 @@ class MainActivity : AppCompatActivity() {
             for(movie in movieList){
                 Log.d("KRISHNA", movie.toString())
             }
+            activityMainBinding.progressBar.visibility = View.GONE
+            activityMainBinding.recyclerMovie.visibility = View.VISIBLE
             movieAdapter.submitList(movieList)
         })
 
