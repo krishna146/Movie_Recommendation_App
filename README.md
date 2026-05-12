@@ -3,3 +3,8 @@ This project presents a movie recommendation system built on metadata from appro
 
 # Thesis Report
 [Bachelor_Thesis_Report_Alok.pdf](https://github.com/user-attachments/files/27640675/Bachelor_Thesis_Report_Alok.pdf)
+
+# Android App Screenshots
+<img align="left" width="45%" height="auto" alt="Screenshot 2026-05-11 at 02 19 54" src="https://github.com/user-attachments/assets/23a2a320-706f-465c-ae6e-d9513ab0a679" />
+<img align="left" width="45%" height="auto" alt="Screenshot 2026-05-11 at 02 27 16" src="https://github.com/user-attachments/assets/ef7aa5f7-7ddd-4b06-bdaf-105b42033ca4" />
+
